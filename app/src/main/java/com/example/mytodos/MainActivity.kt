@@ -2,6 +2,7 @@ package com.example.mytodos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.todoapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
