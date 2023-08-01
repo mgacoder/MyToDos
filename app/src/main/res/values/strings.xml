@@ -4,4 +4,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_data_to_list">add data to list</string>
     <string name="no_data">No Data</string>
+
+    <string-array name="priorities" >
+        <item>High Priority</item>
+        <item>Medium Priority</item>
+        <item>Low Priority</item>
+    </string-array>
+
+
 </resources>
