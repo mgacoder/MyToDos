@@ -11,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.todoapp"
+        applicationId "com.example.mytodos"
         minSdkVersion 26
         targetSdkVersion 33
         versionCode 1
@@ -48,7 +48,7 @@ android {
             }
         }
     }
-    namespace 'com.example.todoapp'
+    namespace 'com.example.mytodos'
 }
 
 dependencies {
