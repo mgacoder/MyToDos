@@ -1,5 +1,6 @@
 package com.example.mytodos.fragments.update
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.EditText
@@ -47,8 +48,9 @@ class UpdateFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.menu_save) {
-            updateItem()
+        when(item.itemId) {
+            R.id.menu_save -> updateItem()
+            R.id.menu_delete -> confirmItemRemoval()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -72,6 +74,23 @@ class UpdateFragment : Fragment() {
         } else {
             Toast.makeText(context, "Please fill out all fields.", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun confirmItemRemoval() {
+        AlertDialog.Builder(context)
+            .setPositiveButton("Yes") { _, _ ->
+                mToDoViewModel.deleteItem(args.currentItem)
+                Toast.makeText(
+                    context,
+                    "Successfully Removed: '${args.currentItem.title}'",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+            }
+            .setNegativeButton("No") { _,_ -> }
+            .setTitle("Delete ${args.currentItem.title}?")
+            .setMessage("Are you sure you want to remove ${args.currentItem.title}?")
+            .create().show()
     }
 }
 
