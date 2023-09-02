@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mytodos.R
 import com.example.mytodos.data.viewmodel.ToDoViewModel
 import com.example.mytodos.databinding.FragmentListBinding
+import com.example.mytodos.fragments.SharedViewModel
 
 class ListFragment : Fragment() {
 
     private lateinit var binding: FragmentListBinding
     private val mToDoViewModel: ToDoViewModel by viewModels()
+    private val mSharedViewModel: SharedViewModel by viewModels()
     private val adapter: ListAdapter by lazy { ListAdapter() }
 
     override fun onCreateView(
@@ -31,7 +33,12 @@ class ListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
 
         mToDoViewModel.getAllData.observe(viewLifecycleOwner, Observer { data ->
+            mSharedViewModel.checkIfDataBaseEmpty(data)
             adapter.setData(data)
+        })
+        
+        mSharedViewModel.emptyDatabase.observe(viewLifecycleOwner, Observer { 
+            showEmptyDatabaseViews(it)
         })
 
         binding.fragmentListFloatingActionButton.setOnClickListener {
@@ -41,6 +48,16 @@ class ListFragment : Fragment() {
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    private fun showEmptyDatabaseViews(emptyDatabase: Boolean) {
+        if(emptyDatabase) {
+            binding.noDataImageView.visibility = View.VISIBLE
+            binding.noDataTextView.visibility = View.VISIBLE
+        } else {
+            binding.noDataImageView.visibility = View.INVISIBLE
+            binding.noDataTextView.visibility = View.INVISIBLE
+        }
     }
 
     @Deprecated("")
