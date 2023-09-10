@@ -1,67 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--suppress ALL -->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.mytodos.fragments.list.ListFragment"
-    android:id="@+id/listFragmentLayout"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mSharedViewModel"
+            type="com.example.mytodos.fragments.SharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.mytodos.fragments.list.ListFragment"
+        android:id="@+id/listFragmentLayout">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_list_recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:paddingTop="8dp"
-        android:clipToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_list_recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fragment_list_floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:contentDescription="@string/add_data_to_list"
-        android:src="@drawable/ic_add_data"
-        app:tint="@color/white"
-        app:backgroundTint="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fragment_list_floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:navigateToAddFragment="@{true}"
+            app:contentDescription="@string/add_data_to_list"
+            android:src="@drawable/ic_add_data"
+            app:tint="@color/white"
+            app:backgroundTint="@color/purple_500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/noData_ImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_no_data"
-        app:layout_constraintBottom_toBottomOf="@+id/fragment_list_recyclerView"
-        app:layout_constraintEnd_toEndOf="@+id/fragment_list_recyclerView"
-        app:layout_constraintStart_toStartOf="@+id/fragment_list_recyclerView"
-        app:layout_constraintTop_toTopOf="@+id/fragment_list_recyclerView"
-        app:layout_constraintVertical_bias="0.37"
-        app:tint="@color/lightGray" />
+        <ImageView
+            android:id="@+id/noData_ImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_no_data"
+            android:emptyDatabase="@{mSharedViewModel.emptyDatabase}"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_list_recyclerView"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_list_recyclerView"
+            app:layout_constraintStart_toStartOf="@+id/fragment_list_recyclerView"
+            app:layout_constraintTop_toTopOf="@+id/fragment_list_recyclerView"
+            app:layout_constraintVertical_bias="0.37"
+            app:tint="@color/lightGray" />
 
-    <TextView
-        android:id="@+id/noData_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/no_data"
-        android:textSize="16sp"
-        android:alpha="0.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noData_ImageView" />
+        <TextView
+            android:id="@+id/noData_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/no_data"
+            android:textSize="16sp"
+            android:alpha="0.5"
+            android:emptyDatabase="@{mSharedViewModel.emptyDatabase}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noData_ImageView" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
