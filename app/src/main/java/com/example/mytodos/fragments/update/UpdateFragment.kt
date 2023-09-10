@@ -19,27 +19,26 @@ import com.example.mytodos.fragments.SharedViewModel
 
 class UpdateFragment : Fragment() {
 
-    private lateinit var binding: FragmentUpdateBinding
-    private lateinit var mTitle: EditText
-    private lateinit var mDescription: EditText
-    private lateinit var mPriority: Spinner
     private val args by navArgs<UpdateFragmentArgs>()
+
     private val mSharedViewModel: SharedViewModel by viewModels()
     private val mToDoViewModel: ToDoViewModel by viewModels()
+
+    private var _binding: FragmentUpdateBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentUpdateBinding.inflate(inflater, container, false)
-        mTitle.setText(args.currentItem.title)
-        mDescription.setText(args.currentItem.description)
-        mPriority.setSelection(mSharedViewModel.parsePriorityToInt(args.currentItem.priority))
-        mPriority.onItemSelectedListener = mSharedViewModel.listener
-        setHasOptionsMenu(true);
+        _binding = FragmentUpdateBinding.inflate(inflater, container, false)
+        binding.args = args
 
-        // Inflate the layout for this fragment
+        setHasOptionsMenu(true)
+
+        binding.currentPrioritySpinner.onItemSelectedListener = mSharedViewModel.listener
+
         return binding.root
     }
 
@@ -56,9 +55,9 @@ class UpdateFragment : Fragment() {
     }
 
     private fun updateItem() {
-        val title = mTitle.text.toString()
-        val description = mDescription.text.toString()
-        val priority = mPriority.selectedItem.toString()
+        val title = binding.currentTitleEditText as String
+        val description = binding.currentDescriptionEditTextTextMultiLine as String
+        val priority = binding.currentPrioritySpinner as String
 
         val validation = mSharedViewModel.verifyDataFromUser(title, description)
         if(validation) {
@@ -91,6 +90,11 @@ class UpdateFragment : Fragment() {
             .setTitle("Delete ${args.currentItem.title}?")
             .setMessage("Are you sure you want to remove ${args.currentItem.title}?")
             .create().show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }
 
