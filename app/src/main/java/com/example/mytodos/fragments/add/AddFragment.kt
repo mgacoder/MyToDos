@@ -35,7 +35,7 @@ class AddFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.add_fragment_menu, menu);
+        inflater.inflate(R.menu.add_fragment_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -46,9 +46,9 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDataToDb() {
-        val title = binding.titleEditText.toString()
-        val description = binding.descriptionEditTextTextMultiLine.toString()
-        val priority = binding.prioritySpinner.toString()
+        val title = binding.titleEditText.text.toString()
+        val description = binding.descriptionEditTextTextMultiLine.text.toString()
+        val priority = binding.prioritySpinner.selectedItem.toString()
         val validation = mSharedViewModel.verifyDataFromUser(title, description)
         if(validation) {
             mToDoViewModel.insertData(
