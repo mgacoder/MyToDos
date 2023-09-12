@@ -57,7 +57,7 @@ class UpdateFragment : Fragment() {
     private fun updateItem() {
         val title = binding.currentTitleEditText as String
         val description = binding.currentDescriptionEditTextTextMultiLine as String
-        val priority = binding.currentPrioritySpinner as String
+        val priority = binding.currentPrioritySpinner.selectedItem as String
 
         val validation = mSharedViewModel.verifyDataFromUser(title, description)
         if(validation) {

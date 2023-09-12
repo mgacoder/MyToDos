@@ -3,11 +3,10 @@ package com.example.mytodos.data.models
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.mytodos.data.models.Priority
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Entity(tableName = "todo_table")
-@kotlinx.parcelize.Parcelize
+@Parcelize
 data class ToDoData(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
