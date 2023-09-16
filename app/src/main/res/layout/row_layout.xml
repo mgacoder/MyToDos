@@ -70,7 +70,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/title_textView"
                 app:layout_constraintVertical_bias="0.0" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
