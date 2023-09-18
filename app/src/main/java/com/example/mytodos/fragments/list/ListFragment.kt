@@ -18,8 +18,6 @@ import com.example.mytodos.databinding.FragmentListBinding
 import com.example.mytodos.fragments.SharedViewModel
 import com.example.mytodos.fragments.list.adapter.ListAdapter
 import com.google.android.material.snackbar.Snackbar
-import jp.wasabeef.recyclerview.animators.LandingAnimator
-
 
 class ListFragment : Fragment(), SearchView.OnQueryTextListener {
 
@@ -43,6 +41,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         mToDoViewModel.getAllData.observe(viewLifecycleOwner, Observer { data ->
             mSharedViewModel.checkIfDataBaseEmpty(data)
             adapter.setData(data)
+            binding.fragmentListRecyclerView.scheduleLayoutAnimation()
         })
 
         setHasOptionsMenu(true)
@@ -54,10 +53,6 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         val recyclerView = binding.fragmentListRecyclerView
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
-        recyclerView.itemAnimator = LandingAnimator().apply {
-            addDuration = 250
-        }
-
         swipeToDelete(recyclerView)
     }
 
