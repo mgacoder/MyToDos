@@ -44,6 +44,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         mToDoViewModel.getAllData.observe(viewLifecycleOwner, Observer { data ->
             mSharedViewModel.checkIfDataBaseEmpty(data)
             adapter.setData(data)
+            binding.fragmentListRecyclerView.scheduleLayoutAnimation()
         })
 
          return binding.root
