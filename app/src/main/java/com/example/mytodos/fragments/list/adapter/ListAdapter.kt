@@ -11,7 +11,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     var dataList = emptyList<ToDoData>()
 
-    class MyViewHolder(val binding: RowLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(private val binding: RowLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(toDoData: ToDoData) {
             binding.toDoData = toDoData
