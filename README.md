@@ -30,9 +30,9 @@ MyToDos is a robust to-do list application developed in Kotlin. It harnesses key
 ### CRUD Operations
 * Understand the concept of **CRUD** (Create, Read, Update, Delete) and how it applies to **Fragments**, **Activities**, and **ROOM** database.
 * Learn how to implement these fundamental operations for effective data management in your **Android app**.
-### Clean Architechture
-* Recognize the importance of cleand and organized architechtural patterns in **Android app development**.
-* Learn how to structure your app's codebase for maintanability, scalability, and collaboration. 
+### Clean Architecture
+* Recognize the importance of clean and organized architectural patterns in **Android app development**.
+* Learn how to structure your app's codebase for maintainability, scalability, and collaboration. 
 <a name="live-demo"></a>
 ## Live Demo
 <a name="screenshots"></a>
