@@ -1,8 +1,10 @@
 # MyToDos
-## Project Description
 MyToDos is a robust to-do list application developed in Kotlin. It harnesses key Android architecture components to provide users with a seamless and efficient task management experience.
 
 ## Table of Contents
+<details>
+  <summary>Table of Contents</summary>
+  
 - [Learning Outcomes](#learning-outcomes)
 - [Future Enhancements](#future-enhancements)
 - [Screenshots](#screenshots)
@@ -10,9 +12,14 @@ MyToDos is a robust to-do list application developed in Kotlin. It harnesses key
 - [Setup](#setup)
 - [Credit](#credit)
 - [Licenses](#license)
+</details>
+
 <a name="learning-outcomes"></a>
 ## Learning Outcomes
-### Activity and Fragments
+<details open>
+  <summary>Learning Outcomes</summary>
+
+  ### Activity and Fragments
 * Gain a deep understanding of how **Activities** and **Fragments** work together to create dynamic and interactive user interfaces.
 * Learn how **Fragments** can be hosted within **Activities** to create modular and reusable UI components.
 ### Navigation Components
@@ -33,15 +40,25 @@ MyToDos is a robust to-do list application developed in Kotlin. It harnesses key
 ### Clean Architecture
 * Recognize the importance of clean and organized architectural patterns in **Android app development**.
 * Learn how to structure your app's codebase for maintainability, scalability, and collaboration. 
+</details>
+
 <a name="live-demo"></a>
 ## Live Demo
 <a name="screenshots"></a>
 ## Screenshots
 <a name="setup"></a>
 ## Setup
+To get started with MyToDos, follow these steps:
+1. Clone the project repository to your local machine:<br>
+   ```git clone https://github.com/miguel-galvan/MyToDos.git```
+2. Open the project in Android Studio
+3. Create an Android emulator or connect a physical Android device.
+4. Build and run the application using Android Studio.
 <a name="#future-enhancements"></a>
 ## Future Enhancements
+Coming soon! Brainstorming ideas to enhance app!
 <a name="credit"></a>
 ## Credit
+This project was completed as part of a Udemy course. You can access the full course and learn more about Android development [here](https://www.udemy.com/course/to-do-app-clean-architecture-android-development-kotlin/).
 <a name="license"></a>
 ## Licenses
