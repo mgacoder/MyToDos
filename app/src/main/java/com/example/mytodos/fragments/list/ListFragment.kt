@@ -121,7 +121,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
                 mToDoViewModel.deleteAll()
                 Toast.makeText(
                     context,
-                    "Successfully Removed Everything!'",
+                    "Successfully Removed Everything!",
                     Toast.LENGTH_SHORT
                 ).show()
             }
