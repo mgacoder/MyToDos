@@ -1,13 +1,13 @@
 # MyToDos
 MyToDos is a robust to-do list application developed in Kotlin. It harnesses key Android architecture components to provide users with a seamless and efficient task management experience.
 
+![ALT image](app/src/main/res/drawable/screenshots/empty_list.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![ALT image](app/src/main/res/drawable/screenshots/add.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![ALT image](app/src/main/res/drawable/screenshots/list.png)
 ## Table of Contents
 <details>
   <summary>Table of Contents</summary>
   
 - [Learning Outcomes](#learning-outcomes)
 - [Future Enhancements](#future-enhancements)
-- [Screenshots](#screenshots)
 - [Live Demo](#live-demo)
 - [Setup](#setup)
 - [Credit](#credit)
@@ -44,8 +44,6 @@ MyToDos is a robust to-do list application developed in Kotlin. It harnesses key
 
 <a name="live-demo"></a>
 ## Live Demo
-<a name="screenshots"></a>
-## Screenshots
 <a name="setup"></a>
 ## Setup
 To get started with MyToDos, follow these steps:
