@@ -44,6 +44,25 @@ MyToDos is a robust to-do list application developed in Kotlin. It harnesses key
 
 <a name="live-demo"></a>
 ## Live Demo
+
+
+
+Create a new todo and diplay it on your task list
+
+https://github.com/miguel-galvan/MyToDos/app/src/main/res/raw/66977173/05aa36c5-c155-4068-8d8b-cdcbd4aec1ed
+
+Lookup specific todos in list and edit the task
+
+https://github.com/miguel-galvan/MyToDos/app/src/main/res/raw/66977173/2f567f30-961e-4a15-b5fd-1ae537ba4d01
+
+Sort task by priority for convenience, both high and low
+
+https://github.com/miguel-galvan/MyToDos/app/src/main/res/raw/66977173/7282f00f-5cea-4b42-94fa-870675d4bff8
+
+Delete a todo with one of three methos
+
+https://github.com/miguel-galvan/MyToDos/app/src/main/res/raw/66977173/800ced97-dd75-40c1-a1a5-7be8cbed044c
+
 <a name="setup"></a>
 ## Setup
 To get started with MyToDos, follow these steps:
